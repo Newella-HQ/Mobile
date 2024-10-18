@@ -18,6 +18,8 @@ class MainViewModel(
         _state.value = _state.value.copy(selectedNavOption = option)
         when (option) {
             NavigationOption.HOME    -> router.openHome()
+            NavigationOption.SEARCH    -> router.openSearch()
+
         }
     }
 

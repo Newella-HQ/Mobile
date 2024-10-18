@@ -8,6 +8,7 @@ import org.koin.core.logger.Level
 import ru.plodushcheva.newella.home.di.homeModule
 import ru.plodushcheva.newella.main.di.mainModule
 import ru.plodushcheva.newella.navigation.navigationModule
+import ru.plodushcheva.newella.search.di.searchModule
 
 class NewellaApplication : Application() {
 
@@ -20,7 +21,8 @@ class NewellaApplication : Application() {
             modules(
                 navigationModule,
                 mainModule,
-                homeModule
+                homeModule,
+                searchModule
             )
         }
     }

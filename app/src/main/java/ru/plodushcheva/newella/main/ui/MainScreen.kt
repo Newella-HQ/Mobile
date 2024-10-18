@@ -3,6 +3,7 @@ package ru.plodushcheva.newella.main.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -19,16 +20,16 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.toRoute
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.koinInject
-import org.koin.core.parameter.parametersOf
 import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.home.ui.HomeScreen
 import ru.plodushcheva.newella.main.presentation.MainViewModel
 import ru.plodushcheva.newella.main.presentation.NavigationOption
 import ru.plodushcheva.newella.navigation.NavControllerHolder
+import ru.plodushcheva.newella.search.SearchRoute
+import ru.plodushcheva.newella.search.ui.SearchScreen
 
 @Composable
 fun MainScreen() {
@@ -64,6 +65,12 @@ fun MainScreen() {
                         homeViewModel = koinViewModel(),
                     )
                 }
+
+                composable<SearchRoute> {
+                    SearchScreen(
+                        searchViewModel = koinViewModel(),
+                    )
+                }
             }
 
             BottomNavigation(
@@ -97,11 +104,15 @@ private fun BottomNavigation(
 private fun navOptionIcon(option: NavigationOption): ImageVector =
     when (option) {
         NavigationOption.HOME    -> Icons.Default.Home
+        NavigationOption.SEARCH    -> Icons.Default.Search
+
     }
 
 @Composable
 private fun navOptionLabel(option: NavigationOption): String = stringResource(
     when (option) {
         NavigationOption.HOME    -> R.string.bottom_bar_home
+        NavigationOption.SEARCH    -> R.string.bottom_bar_search
+
     }
 )

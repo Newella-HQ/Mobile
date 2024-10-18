@@ -4,4 +4,6 @@ interface MainRouter {
 
     fun openHome()
 
+    fun openSearch()
+
 }
