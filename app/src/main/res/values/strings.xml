@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Newella</string>
+    <string name="bottom_bar_home">Home</string>
 </resources>

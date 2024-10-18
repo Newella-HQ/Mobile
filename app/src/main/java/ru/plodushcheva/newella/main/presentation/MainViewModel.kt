@@ -14,6 +14,13 @@ class MainViewModel(
     ))
     val state: StateFlow<MainState> = _state
 
+    fun openOption(option: NavigationOption) {
+        _state.value = _state.value.copy(selectedNavOption = option)
+        when (option) {
+            NavigationOption.HOME    -> router.openHome()
+        }
+    }
+
     fun handleOpenedScreen(option: NavigationOption?) {
         _state.value = _state.value.copy(selectedNavOption = option)
     }
