@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
+
+    id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -87,5 +91,22 @@ dependencies {
 
     // Сериализация JSON
     implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.google.fonts)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
+
+    implementation(libs.kotlinx.serialization.json)
+
+
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    implementation(libs.coil3.coil.compose)
+    implementation(libs.coil3.coil.network.okhttp)
 
 }
