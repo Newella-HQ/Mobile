@@ -19,6 +19,7 @@ class MainViewModel(
         when (option) {
             NavigationOption.HOME    -> router.openHome()
             NavigationOption.SEARCH    -> router.openSearch()
+            NavigationOption.LIBRARY    -> router.openLibrary()
 
         }
     }

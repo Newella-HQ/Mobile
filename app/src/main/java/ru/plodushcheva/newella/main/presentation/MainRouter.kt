@@ -6,4 +6,6 @@ interface MainRouter {
 
     fun openSearch()
 
+    fun openLibrary()
+
 }

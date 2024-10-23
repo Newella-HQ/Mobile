@@ -5,11 +5,13 @@ import org.koin.dsl.bind
 import org.koin.dsl.binds
 import org.koin.dsl.module
 import ru.plodushcheva.newella.home.presentation.HomeRouter
+import ru.plodushcheva.newella.library.presentation.LibraryRouter
 import ru.plodushcheva.newella.search.presentation.SearchRouter
 import ru.plodushcheva.newella.main.presentation.MainRouter
 import ru.plodushcheva.newella.navigation.feathurerouter.MainRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.HomeRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.SearchRouterImpl
+import ru.plodushcheva.newella.navigation.feathurerouter.LibraryRouterImpl
 
 
 
@@ -19,4 +21,6 @@ val navigationModule = module {
     singleOf(::MainRouterImpl) bind MainRouter::class
     singleOf(::HomeRouterImpl) bind HomeRouter::class
     singleOf(::SearchRouterImpl) bind SearchRouter::class
+    singleOf(::LibraryRouterImpl) bind LibraryRouter::class
+
 }

@@ -2,6 +2,7 @@ package ru.plodushcheva.newella.main.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
@@ -25,6 +26,8 @@ import org.koin.compose.koinInject
 import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.home.ui.HomeScreen
+import ru.plodushcheva.newella.library.LibraryRoute
+import ru.plodushcheva.newella.library.ui.LibraryScreen
 import ru.plodushcheva.newella.main.presentation.MainViewModel
 import ru.plodushcheva.newella.main.presentation.NavigationOption
 import ru.plodushcheva.newella.navigation.NavControllerHolder
@@ -71,6 +74,12 @@ fun MainScreen() {
                         searchViewModel = koinViewModel(),
                     )
                 }
+
+                composable<LibraryRoute> {
+                    LibraryScreen(
+                        libraryViewModel = koinViewModel(),
+                    )
+                }
             }
 
             BottomNavigation(
@@ -105,14 +114,16 @@ private fun navOptionIcon(option: NavigationOption): ImageVector =
     when (option) {
         NavigationOption.HOME    -> Icons.Default.Home
         NavigationOption.SEARCH    -> Icons.Default.Search
+        NavigationOption.LIBRARY    -> Icons.Default.FavoriteBorder
 
     }
 
 @Composable
 private fun navOptionLabel(option: NavigationOption): String = stringResource(
     when (option) {
-        NavigationOption.HOME    -> R.string.bottom_bar_home
-        NavigationOption.SEARCH    -> R.string.bottom_bar_search
+        NavigationOption.HOME -> R.string.bottom_bar_home
+        NavigationOption.SEARCH -> R.string.bottom_bar_search
+        NavigationOption.LIBRARY -> R.string.bottom_bar_library
 
     }
 )

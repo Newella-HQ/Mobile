@@ -2,4 +2,5 @@
     <string name="app_name">Newella</string>
     <string name="bottom_bar_home">Home</string>
     <string name="bottom_bar_search">Search</string>
+    <string name="bottom_bar_library">Library</string>
 </resources>
