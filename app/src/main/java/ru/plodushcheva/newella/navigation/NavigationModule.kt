@@ -12,7 +12,8 @@ import ru.plodushcheva.newella.navigation.feathurerouter.MainRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.HomeRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.SearchRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.LibraryRouterImpl
-
+import ru.plodushcheva.newella.navigation.feathurerouter.ProfileRouterImpl
+import ru.plodushcheva.newella.profile.presentation.ProfileRouter
 
 
 val navigationModule = module {
@@ -22,5 +23,7 @@ val navigationModule = module {
     singleOf(::HomeRouterImpl) bind HomeRouter::class
     singleOf(::SearchRouterImpl) bind SearchRouter::class
     singleOf(::LibraryRouterImpl) bind LibraryRouter::class
+    singleOf(::ProfileRouterImpl) bind ProfileRouter::class
+
 
 }

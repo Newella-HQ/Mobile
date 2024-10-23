@@ -9,6 +9,7 @@ import ru.plodushcheva.newella.home.di.homeModule
 import ru.plodushcheva.newella.library.di.libraryModule
 import ru.plodushcheva.newella.main.di.mainModule
 import ru.plodushcheva.newella.navigation.navigationModule
+import ru.plodushcheva.newella.profile.di.profileModule
 import ru.plodushcheva.newella.search.di.searchModule
 
 class NewellaApplication : Application() {
@@ -25,7 +26,8 @@ class NewellaApplication : Application() {
 
                 homeModule,
                 searchModule,
-                libraryModule
+                libraryModule,
+                profileModule
             )
         }
     }

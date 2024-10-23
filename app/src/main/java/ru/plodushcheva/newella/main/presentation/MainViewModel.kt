@@ -20,7 +20,7 @@ class MainViewModel(
             NavigationOption.HOME    -> router.openHome()
             NavigationOption.SEARCH    -> router.openSearch()
             NavigationOption.LIBRARY    -> router.openLibrary()
-
+            NavigationOption.PROFILE    -> router.openProfile()
         }
     }
 

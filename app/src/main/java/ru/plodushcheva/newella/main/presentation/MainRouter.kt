@@ -8,4 +8,7 @@ interface MainRouter {
 
     fun openLibrary()
 
+    fun openProfile()
+
+
 }
