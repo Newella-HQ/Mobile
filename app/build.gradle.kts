@@ -1,3 +1,5 @@
+import com.google.protobuf.gradle.id
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -5,6 +7,9 @@ plugins {
 
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.kapt")
+
+    alias(libs.plugins.protobuf)
+
 }
 
 android {
@@ -52,6 +57,36 @@ android {
         }
     }
 }
+
+
+protobuf {
+    protoc { artifact = libs.protoc.asProvider().get().toString() }
+    plugins {
+        id("grpc") { artifact = libs.protoc.gen.grpc.java.get().toString() }
+        id("grpckt") { artifact = "${libs.protoc.gen.grpc.kotlin.get()}:jdk8@jar" }
+    }
+    generateProtoTasks {
+        all().forEach {
+            it.plugins {
+                id("grpc") {
+                    option("lite")
+                    outputSubDir = "java"
+                }
+                id("grpckt") {
+                    option("lite")
+                    outputSubDir = "java"
+                }
+            }
+            it.builtins {
+                id("java") { option("lite") }
+                id("kotlin") { option("lite") }
+            }
+        }
+    }
+}
+
+
+
 
 dependencies {
 
@@ -108,5 +143,14 @@ dependencies {
 
     implementation(libs.coil3.coil.compose)
     implementation(libs.coil3.coil.network.okhttp)
+
+
+    //grpc
+    implementation(libs.grpc.kotlin.stub)
+    implementation(libs.grpc.protobuf.lite)
+    implementation(libs.protobuf.kotlin.lite)
+    runtimeOnly(libs.grpc.okhttp)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
 
 }
