@@ -5,19 +5,20 @@ import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
-import ru.plodushcheva.newella.profile.data.repository.ProfileProfileModeRepositoryImpl
+import ru.plodushcheva.newella.profile.data.repository.ProfileModeRepositoryImpl
 import ru.plodushcheva.newella.profile.domain.repository.ProfileModeRepository
 import ru.plodushcheva.newella.profile.domain.usecase.GetModeUseCase
+import ru.plodushcheva.newella.profile.domain.usecase.SaveModeUseCase
 import ru.plodushcheva.newella.profile.presentation.ProfileViewModel
 
 val profileModule = module {
 
-    singleOf(::ProfileProfileModeRepositoryImpl) bind ProfileModeRepository::class
-
+    singleOf(::ProfileModeRepositoryImpl) bind ProfileModeRepository::class
 
     factoryOf(::GetModeUseCase)
+    factoryOf(::SaveModeUseCase)
 
     viewModel{
-        ProfileViewModel(get(), get())
+        ProfileViewModel(get(), get(), get())
     }
 }

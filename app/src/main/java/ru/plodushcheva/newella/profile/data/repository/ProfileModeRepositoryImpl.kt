@@ -5,7 +5,7 @@ import ru.plodushcheva.newella.db.mode.ModeDao
 import ru.plodushcheva.newella.profile.domain.repository.ProfileModeRepository
 
 
-class ProfileProfileModeRepositoryImpl(
+class ProfileModeRepositoryImpl(
     private val dao: ModeDao
 ) : ProfileModeRepository {
 

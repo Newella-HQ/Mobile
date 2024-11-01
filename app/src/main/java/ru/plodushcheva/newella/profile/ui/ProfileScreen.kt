@@ -1,6 +1,7 @@
 package ru.plodushcheva.newella.profile.ui
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,7 +35,14 @@ fun ProfileScreen(
                 Text(text = "Error: ${state.message ?: "Unknown error"}")
             }
             is ProfileState.Content -> {
-                Text(text = "Content: ${state.profile.mode}")
+                val currentModeText = if (state.profile.mode) "Режим создания" else "Режим чтения"
+                val switchButtonText = if (state.profile.mode) "Переключить на чтение" else "Переключить на создание"
+
+                Text(text = "Текущий режим: $currentModeText")
+
+                Button(onClick = { profileViewModel.toggleMode() }) {
+                    Text(text = switchButtonText)
+                }
             }
         }
     }

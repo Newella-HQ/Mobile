@@ -7,11 +7,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import ru.plodushcheva.newella.profile.data.model.ProfileModel
 import ru.plodushcheva.newella.profile.domain.usecase.GetModeUseCase
+import ru.plodushcheva.newella.profile.domain.usecase.SaveModeUseCase
 import kotlin.coroutines.cancellation.CancellationException
 
 class ProfileViewModel(
     private val router: ProfileRouter,
-    private val getModeUseCase: GetModeUseCase
+    private val getModeUseCase: GetModeUseCase,
+    private val saveModeUseCase: SaveModeUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<ProfileState>(ProfileState.Initial)
@@ -33,6 +35,15 @@ class ProfileViewModel(
             } catch (ex: Exception) {
                 _state.value = ProfileState.Failure(ex.message)
             }
+        }
+    }
+
+    fun toggleMode() {
+        viewModelScope.launch {
+            val currentMode = (_state.value as? ProfileState.Content)?.profile?.mode ?: true
+            val newMode = !currentMode
+            saveModeUseCase(newMode)
+            _state.value = ProfileState.Content(ProfileModel(newMode))
         }
     }
 
