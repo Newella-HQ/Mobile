@@ -21,6 +21,7 @@ class MainViewModel(
             NavigationOption.SEARCH    -> router.openSearch()
             NavigationOption.LIBRARY    -> router.openLibrary()
             NavigationOption.PROFILE    -> router.openProfile()
+            NavigationOption.CREATING    -> router.openCreating()
         }
     }
 

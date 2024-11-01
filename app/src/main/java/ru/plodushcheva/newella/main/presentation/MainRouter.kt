@@ -10,5 +10,7 @@ interface MainRouter {
 
     fun openProfile()
 
+    fun openCreating()
+
 
 }

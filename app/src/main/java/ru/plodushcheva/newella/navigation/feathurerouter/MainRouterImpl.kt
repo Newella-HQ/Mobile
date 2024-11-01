@@ -1,5 +1,6 @@
 package ru.plodushcheva.newella.navigation.feathurerouter
 
+import ru.plodushcheva.newella.center.creating.CreatingRoute
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.library.LibraryRoute
 import ru.plodushcheva.newella.main.presentation.MainRouter
@@ -23,6 +24,10 @@ class MainRouterImpl(private val globalRouter: GlobalRouter) : MainRouter {
 
     override fun openProfile() {
         globalRouter.openPoppingAllPrevious(ProfileRoute)
+    }
+
+    override fun openCreating() {
+        globalRouter.openPoppingAllPrevious(CreatingRoute)
     }
 
 }

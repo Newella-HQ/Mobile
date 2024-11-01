@@ -3,6 +3,7 @@ package ru.plodushcheva.newella.main.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
@@ -25,6 +26,8 @@ import androidx.navigation.compose.rememberNavController
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.koinInject
 import ru.plodushcheva.newella.R
+import ru.plodushcheva.newella.center.creating.CreatingRoute
+import ru.plodushcheva.newella.center.creating.ui.CreatingScreen
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.home.ui.HomeScreen
 import ru.plodushcheva.newella.library.LibraryRoute
@@ -89,6 +92,12 @@ fun MainScreen() {
                         profileViewModel = koinViewModel(),
                     )
                 }
+
+                composable<CreatingRoute> {
+                    CreatingScreen(
+                        creatingViewModel = koinViewModel(),
+                    )
+                }
             }
 
             BottomNavigation(
@@ -123,9 +132,9 @@ private fun navOptionIcon(option: NavigationOption): ImageVector =
     when (option) {
         NavigationOption.HOME    -> Icons.Default.Home
         NavigationOption.SEARCH    -> Icons.Default.Search
+        NavigationOption.CREATING    -> Icons.Default.Create
         NavigationOption.LIBRARY    -> Icons.Default.FavoriteBorder
         NavigationOption.PROFILE    -> Icons.Default.AccountCircle
-
     }
 
 @Composable
@@ -133,6 +142,7 @@ private fun navOptionLabel(option: NavigationOption): String = stringResource(
     when (option) {
         NavigationOption.HOME -> R.string.bottom_bar_home
         NavigationOption.SEARCH -> R.string.bottom_bar_search
+        NavigationOption.CREATING -> R.string.bottom_bar_creating
         NavigationOption.LIBRARY -> R.string.bottom_bar_library
         NavigationOption.PROFILE -> R.string.bottom_bar_profile
 
