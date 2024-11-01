@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -28,6 +29,8 @@ import org.koin.compose.koinInject
 import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.center.creating.CreatingRoute
 import ru.plodushcheva.newella.center.creating.ui.CreatingScreen
+import ru.plodushcheva.newella.center.reading.ReadingRoute
+import ru.plodushcheva.newella.center.reading.ui.ReadingScreen
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.home.ui.HomeScreen
 import ru.plodushcheva.newella.library.LibraryRoute
@@ -98,6 +101,12 @@ fun MainScreen() {
                         creatingViewModel = koinViewModel(),
                     )
                 }
+
+                composable<ReadingRoute> {
+                    ReadingScreen(
+                        readingViewModel = koinViewModel(),
+                    )
+                }
             }
 
             BottomNavigation(
@@ -133,6 +142,7 @@ private fun navOptionIcon(option: NavigationOption): ImageVector =
         NavigationOption.HOME -> Icons.Default.Home
         NavigationOption.SEARCH -> Icons.Default.Search
         NavigationOption.CREATING -> Icons.Default.Create
+        NavigationOption.READING -> Icons.Default.PlayArrow
         NavigationOption.LIBRARY -> Icons.Default.FavoriteBorder
         NavigationOption.PROFILE -> Icons.Default.AccountCircle
     }
@@ -143,8 +153,8 @@ private fun navOptionLabel(option: NavigationOption): String = stringResource(
         NavigationOption.HOME -> R.string.bottom_bar_home
         NavigationOption.SEARCH -> R.string.bottom_bar_search
         NavigationOption.CREATING -> R.string.bottom_bar_creating
+        NavigationOption.READING -> R.string.bottom_bar_reading
         NavigationOption.LIBRARY -> R.string.bottom_bar_library
         NavigationOption.PROFILE -> R.string.bottom_bar_profile
-
     }
 )

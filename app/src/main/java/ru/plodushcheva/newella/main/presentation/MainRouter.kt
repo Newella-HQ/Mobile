@@ -12,5 +12,6 @@ interface MainRouter {
 
     fun openCreating()
 
+    fun openReading()
 
 }

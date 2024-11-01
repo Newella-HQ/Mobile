@@ -6,6 +6,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import ru.plodushcheva.newella.center.creating.di.creatingModule
+import ru.plodushcheva.newella.center.reading.di.readingModule
 import ru.plodushcheva.newella.db.mode.modeDataBaseModule
 import ru.plodushcheva.newella.home.di.homeModule
 import ru.plodushcheva.newella.library.di.libraryModule
@@ -31,7 +32,8 @@ class NewellaApplication : Application() {
                 searchModule,
                 libraryModule,
                 profileModule,
-                creatingModule
+                creatingModule,
+                readingModule
             )
         }
     }
