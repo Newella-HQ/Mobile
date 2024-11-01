@@ -130,11 +130,11 @@ private fun BottomNavigation(
 
 private fun navOptionIcon(option: NavigationOption): ImageVector =
     when (option) {
-        NavigationOption.HOME    -> Icons.Default.Home
-        NavigationOption.SEARCH    -> Icons.Default.Search
-        NavigationOption.CREATING    -> Icons.Default.Create
-        NavigationOption.LIBRARY    -> Icons.Default.FavoriteBorder
-        NavigationOption.PROFILE    -> Icons.Default.AccountCircle
+        NavigationOption.HOME -> Icons.Default.Home
+        NavigationOption.SEARCH -> Icons.Default.Search
+        NavigationOption.CREATING -> Icons.Default.Create
+        NavigationOption.LIBRARY -> Icons.Default.FavoriteBorder
+        NavigationOption.PROFILE -> Icons.Default.AccountCircle
     }
 
 @Composable
