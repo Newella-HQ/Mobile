@@ -30,8 +30,6 @@ fun ProfileScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text(text = "Profile!")
-
         when (val state = profileState) {
             is ProfileState.Initial -> {
                 Text(text = "Welcome! Loading your profile...")

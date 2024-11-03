@@ -7,4 +7,8 @@
     <string name="bottom_bar_creating">Creating</string>
     <string name="bottom_bar_reading">Reading</string>
     <string name="to_auth">Войти</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="sign_in">Авторизация</string>
+    <string name="password">Пароль</string>
+    <string name="email">Почта</string>
 </resources>
