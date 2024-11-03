@@ -40,6 +40,8 @@ import ru.plodushcheva.newella.main.presentation.MainViewModel
 import ru.plodushcheva.newella.main.presentation.NavigationOption
 import ru.plodushcheva.newella.navigation.NavControllerHolder
 import ru.plodushcheva.newella.profile.ProfileRoute
+import ru.plodushcheva.newella.profile.auth.AuthRoute
+import ru.plodushcheva.newella.profile.auth.ui.AuthScreen
 import ru.plodushcheva.newella.profile.ui.ProfileScreen
 import ru.plodushcheva.newella.search.SearchRoute
 import ru.plodushcheva.newella.search.ui.SearchScreen
@@ -110,6 +112,12 @@ fun MainScreen() {
                 composable<ReadingRoute> {
                     ReadingScreen(
                         readingViewModel = koinViewModel(),
+                    )
+                }
+
+                composable<AuthRoute> {
+                    AuthScreen(
+                        authViewModel = koinViewModel(),
                     )
                 }
             }

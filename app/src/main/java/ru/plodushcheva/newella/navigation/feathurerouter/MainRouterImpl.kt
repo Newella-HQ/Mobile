@@ -7,6 +7,7 @@ import ru.plodushcheva.newella.library.LibraryRoute
 import ru.plodushcheva.newella.main.presentation.MainRouter
 import ru.plodushcheva.newella.navigation.GlobalRouter
 import ru.plodushcheva.newella.profile.ProfileRoute
+import ru.plodushcheva.newella.profile.auth.AuthRoute
 import ru.plodushcheva.newella.search.SearchRoute
 
 class MainRouterImpl(private val globalRouter: GlobalRouter) : MainRouter {
@@ -33,6 +34,10 @@ class MainRouterImpl(private val globalRouter: GlobalRouter) : MainRouter {
 
     override fun openReading() {
         globalRouter.openPoppingAllPrevious(ReadingRoute)
+    }
+
+    override fun openAuth() {
+        globalRouter.openPoppingAllPrevious(AuthRoute)
     }
 
 }

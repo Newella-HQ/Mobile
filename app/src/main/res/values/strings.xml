@@ -6,4 +6,5 @@
     <string name="bottom_bar_profile">Profile</string>
     <string name="bottom_bar_creating">Creating</string>
     <string name="bottom_bar_reading">Reading</string>
+    <string name="to_auth">Войти</string>
 </resources>

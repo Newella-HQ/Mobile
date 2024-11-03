@@ -14,4 +14,6 @@ interface MainRouter {
 
     fun openReading()
 
+    fun openAuth()
+
 }
