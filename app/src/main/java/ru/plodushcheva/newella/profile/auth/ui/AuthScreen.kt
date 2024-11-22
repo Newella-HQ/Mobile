@@ -83,6 +83,7 @@ fun AuthScreen(
                 icon = painterResource(id = R.drawable.ic_google_logo),
                 onClick = {
                     isLoading = true
+                    //TODO
                 }
             )
         }

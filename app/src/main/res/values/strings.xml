@@ -11,4 +11,11 @@
     <string name="sign_in">Авторизация</string>
     <string name="password">Пароль</string>
     <string name="email">Почта</string>
+	<string name="settings">Настройки</string>
+    <string name="history">История</string>
+    <string name="ratings">Оценки</string>
+    <string name="about">О себе</string>
+    <string name="following">Подписки</string>
+    <string name="followers">Подписчики</string>
+    <string name="profile_image">Изображение в профиле</string>
 </resources>

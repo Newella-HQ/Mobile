@@ -29,6 +29,8 @@ class NewellaApplication : Application() {
                 mainModule,
                 modeDataBaseModule,
 
+                networkModule,
+
                 homeModule,
                 searchModule,
                 libraryModule,

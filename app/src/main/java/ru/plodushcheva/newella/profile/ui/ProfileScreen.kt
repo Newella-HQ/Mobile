@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ru.plodushcheva.newella.profile.presentation.ProfileState
@@ -18,7 +19,6 @@ import ru.plodushcheva.newella.profile.presentation.ProfileViewModel
 fun ProfileScreen(
     profileViewModel: ProfileViewModel
 ) {
-
     val profileState by profileViewModel.state.collectAsState()
 
     LaunchedEffect(Unit) {
@@ -28,7 +28,8 @@ fun ProfileScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         when (val state = profileState) {
             is ProfileState.Initial -> {
@@ -42,7 +43,11 @@ fun ProfileScreen(
             }
             is ProfileState.Content -> {
                 ProfileContentComponent(
-                    onAuthClicked = profileViewModel::openAuth
+                    onAuthClicked = profileViewModel::openAuth,
+                    onAboutClicked = profileViewModel::openAbout,
+                    onRatingsClicked = profileViewModel::openRatings,
+                    onHistoryClicked = profileViewModel::openHistory,
+                    onSettingsClicked = profileViewModel::openSettings
                 )
 
                 val currentModeText = if (state.profile.mode) "Режим создания" else "Режим чтения"

@@ -10,4 +10,20 @@ class ProfileRouterImpl(private val globalRouter: GlobalRouter) : ProfileRouter 
         globalRouter.open(AuthRoute)
     }
 
+    override fun openAbout() {
+        //globalRouter.open(AboutRoute)
+    }
+
+    override fun openRatings() {
+        //globalRouter.open(RatingsRoute)
+    }
+
+    override fun openHistory() {
+        //globalRouter.open(HistoryRoute)
+    }
+
+    override fun openSettings() {
+        //globalRouter.open(SettingsRoute)
+    }
+
 }

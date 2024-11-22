@@ -51,4 +51,20 @@ class ProfileViewModel(
         router.openAuth()
     }
 
+    fun openAbout() {
+        router.openAbout()
+    }
+
+    fun openRatings() {
+        router.openRatings()
+    }
+
+    fun openHistory() {
+        router.openHistory()
+    }
+
+    fun openSettings() {
+        router.openSettings()
+    }
+
 }
