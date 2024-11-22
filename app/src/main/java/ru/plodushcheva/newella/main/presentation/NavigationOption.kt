@@ -5,7 +5,7 @@ import ru.plodushcheva.newella.center.reading.ReadingRoute
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.search.SearchRoute
 import ru.plodushcheva.newella.library.LibraryRoute
-import ru.plodushcheva.newella.profile.ProfileRoute
+import ru.plodushcheva.newella.profile.main.ProfileRoute
 
 
 import kotlin.reflect.KClass

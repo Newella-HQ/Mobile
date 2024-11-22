@@ -6,7 +6,7 @@ import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.library.LibraryRoute
 import ru.plodushcheva.newella.main.presentation.MainRouter
 import ru.plodushcheva.newella.navigation.GlobalRouter
-import ru.plodushcheva.newella.profile.ProfileRoute
+import ru.plodushcheva.newella.profile.main.ProfileRoute
 import ru.plodushcheva.newella.profile.auth.AuthRoute
 import ru.plodushcheva.newella.search.SearchRoute
 

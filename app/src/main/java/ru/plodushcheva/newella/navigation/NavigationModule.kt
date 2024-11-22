@@ -19,7 +19,7 @@ import ru.plodushcheva.newella.navigation.feathurerouter.LibraryRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.ProfileRouterImpl
 import ru.plodushcheva.newella.navigation.feathurerouter.ReadingRouterImpl
 import ru.plodushcheva.newella.profile.auth.presentation.AuthRouter
-import ru.plodushcheva.newella.profile.presentation.ProfileRouter
+import ru.plodushcheva.newella.profile.main.presentation.ProfileRouter
 
 
 val navigationModule = module {

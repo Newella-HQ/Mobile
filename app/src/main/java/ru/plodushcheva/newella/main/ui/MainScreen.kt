@@ -39,10 +39,18 @@ import ru.plodushcheva.newella.library.ui.LibraryScreen
 import ru.plodushcheva.newella.main.presentation.MainViewModel
 import ru.plodushcheva.newella.main.presentation.NavigationOption
 import ru.plodushcheva.newella.navigation.NavControllerHolder
-import ru.plodushcheva.newella.profile.ProfileRoute
+import ru.plodushcheva.newella.profile.about.AboutRoute
+import ru.plodushcheva.newella.profile.about.ui.AboutScreen
+import ru.plodushcheva.newella.profile.main.ProfileRoute
 import ru.plodushcheva.newella.profile.auth.AuthRoute
 import ru.plodushcheva.newella.profile.auth.ui.AuthScreen
-import ru.plodushcheva.newella.profile.ui.ProfileScreen
+import ru.plodushcheva.newella.profile.history.HistoryRoute
+import ru.plodushcheva.newella.profile.history.ui.HistoryScreen
+import ru.plodushcheva.newella.profile.main.ui.ProfileScreen
+import ru.plodushcheva.newella.profile.ratings.RatingsRoute
+import ru.plodushcheva.newella.profile.ratings.ui.RatingsScreen
+import ru.plodushcheva.newella.profile.settings.SettingsRoute
+import ru.plodushcheva.newella.profile.settings.ui.SettingsScreen
 import ru.plodushcheva.newella.search.SearchRoute
 import ru.plodushcheva.newella.search.ui.SearchScreen
 
@@ -97,12 +105,6 @@ fun MainScreen() {
                     )
                 }
 
-                composable<ProfileRoute> {
-                    ProfileScreen(
-                        profileViewModel = koinViewModel(),
-                    )
-                }
-
                 composable<CreatingRoute> {
                     CreatingScreen(
                         creatingViewModel = koinViewModel(),
@@ -115,11 +117,43 @@ fun MainScreen() {
                     )
                 }
 
+                // Profile ------------------------------------------
+                composable<ProfileRoute> {
+                    ProfileScreen(
+                        profileViewModel = koinViewModel(),
+                    )
+                }
+
                 composable<AuthRoute> {
                     AuthScreen(
                         authViewModel = koinViewModel(),
                     )
                 }
+
+                composable<AboutRoute> {
+                    AboutScreen(
+                        aboutViewModel = koinViewModel(),
+                    )
+                }
+                composable<SettingsRoute> {
+                    SettingsScreen(
+                        settingsViewModel = koinViewModel(),
+                    )
+                }
+
+                composable<HistoryRoute> {
+                    HistoryScreen(
+                        historyViewModel = koinViewModel(),
+                    )
+                }
+
+                composable<RatingsRoute> {
+                    RatingsScreen(
+                        ratingsViewModel = koinViewModel(),
+                    )
+                }
+                // Profile ------------------------------------------
+
             }
 
             BottomNavigation(
