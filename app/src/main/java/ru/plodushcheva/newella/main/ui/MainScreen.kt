@@ -25,13 +25,17 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.koinInject
+import org.koin.core.parameter.parametersOf
 import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.center.creating.CreatingRoute
 import ru.plodushcheva.newella.center.creating.ui.CreatingScreen
 import ru.plodushcheva.newella.center.reading.ReadingRoute
 import ru.plodushcheva.newella.center.reading.ui.ReadingScreen
+import ru.plodushcheva.newella.common.novel.NovelRoute
+import ru.plodushcheva.newella.common.novel.ui.NovelScreen
 import ru.plodushcheva.newella.home.HomeRoute
 import ru.plodushcheva.newella.home.ui.HomeScreen
 import ru.plodushcheva.newella.library.LibraryRoute
@@ -153,6 +157,13 @@ fun MainScreen() {
                     )
                 }
                 // Profile ------------------------------------------
+
+                composable<NovelRoute> {
+                    val destination = it.toRoute<NovelRoute>()
+                    NovelScreen(
+                        viewModel = koinViewModel { parametersOf(destination.novelId) },
+                    )
+                }
 
             }
 

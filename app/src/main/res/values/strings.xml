@@ -18,4 +18,8 @@
     <string name="following">Подписки</string>
     <string name="followers">Подписчики</string>
     <string name="profile_image">Изображение в профиле</string>
+	<string name="novel_title">Novel</string>
+    <string name="error_title">Error</string>
+    <string name="error_try_again">Try again</string>
+    <string name="error_unknown_error">Unknown error</string>
 </resources>

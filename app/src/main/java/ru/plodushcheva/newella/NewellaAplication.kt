@@ -7,6 +7,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import ru.plodushcheva.newella.center.creating.di.creatingModule
 import ru.plodushcheva.newella.center.reading.di.readingModule
+import ru.plodushcheva.newella.common.novel.di.novelModule
 import ru.plodushcheva.newella.db.mode.modeDataBaseModule
 import ru.plodushcheva.newella.home.di.homeModule
 import ru.plodushcheva.newella.library.di.libraryModule
@@ -47,7 +48,9 @@ class NewellaApplication : Application() {
 
                 creatingModule,
                 readingModule,
-                authModule
+                authModule,
+
+                novelModule
             )
         }
     }

@@ -26,40 +26,40 @@ class LibraryViewModel(
                     NovelSection(
                         title = "Продолжить читать",
                         novels = listOf(
-                            NovelItem("1", R.drawable.empty_novel_h),
-                            NovelItem("2", R.drawable.empty_novel_h),
-                            NovelItem("3", R.drawable.empty_novel_h),
-                            NovelItem("4", R.drawable.empty_novel_h),
+                            NovelItem(1, R.drawable.empty_novel_h),
+                            NovelItem(2, R.drawable.empty_novel_h),
+                            NovelItem(3, R.drawable.empty_novel_h),
+                            NovelItem(4, R.drawable.empty_novel_h),
                             )
                     ),
                     NovelSection(
                         title = "Продолжить создавать",
                         novels = listOf(
-                            NovelItem("3", R.drawable.empty_novel_h),
-                            NovelItem("4", R.drawable.empty_novel_h),
+                            NovelItem(3, R.drawable.empty_novel_h),
+                            NovelItem(4, R.drawable.empty_novel_h),
                         )
                     ),
                     NovelSection(
                         title = "Сохраненное",
                         novels = listOf(
-                            NovelItem("5", R.drawable.empty_novel_v),
-                            NovelItem("6", R.drawable.empty_novel_v),
+                            NovelItem(5, R.drawable.empty_novel_v),
+                            NovelItem(6, R.drawable.empty_novel_v),
                         )
                     ),
                     NovelSection(
                         title = "Созданное",
                         novels = listOf(
-                            NovelItem("7", R.drawable.empty_novel_v),
-                            NovelItem("8", R.drawable.empty_novel_v),
-                            NovelItem("9", R.drawable.empty_novel_v),
-                            NovelItem("10", R.drawable.empty_novel_v),
+                            NovelItem(7, R.drawable.empty_novel_v),
+                            NovelItem(8, R.drawable.empty_novel_v),
+                            NovelItem(9, R.drawable.empty_novel_v),
+                            NovelItem(10, R.drawable.empty_novel_v),
                             )
                     ),
                     NovelSection(
                         title = "Прочитанное",
                         novels = listOf(
-                            NovelItem("9", R.drawable.empty_novel_v),
-                            NovelItem("10", R.drawable.empty_novel_v),
+                            NovelItem(9, R.drawable.empty_novel_v),
+                            NovelItem(10, R.drawable.empty_novel_v),
                         )
                     )
                 )
@@ -67,8 +67,8 @@ class LibraryViewModel(
         }
     }
 
-    fun openNovel(novelId: String) {
-        //router.openNovel(novelId)
+    fun openNovel(novelId: Int) {
+        router.openNovel(novelId)
     }
 
 }

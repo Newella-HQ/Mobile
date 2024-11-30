@@ -55,7 +55,7 @@ fun LibraryScreen(
                             NovelSection(
                                 title = section.title,
                                 items = section.novels,
-                                onItemClicked = { novelId -> libraryViewModel.openNovel(novelId) }
+                                onItemClicked = libraryViewModel::openNovel
                             )
                         }
                     }
@@ -72,7 +72,7 @@ fun LibraryScreen(
 fun NovelSection(
     title: String,
     items: List<NovelItem>,
-    onItemClicked: (String) -> Unit
+    onItemClicked: (Int) -> Unit
 ) {
     Column(
         modifier = Modifier.fillMaxWidth()
