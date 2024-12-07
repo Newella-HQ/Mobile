@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.center.reading.domain.entity.Page
-import ru.plodushcheva.newella.home.presentation.HomeState
 
 class ReadingViewModel(
     private val readingRouter: ReadingRouter

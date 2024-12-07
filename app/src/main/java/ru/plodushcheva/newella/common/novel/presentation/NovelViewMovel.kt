@@ -5,12 +5,12 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import ru.plodushcheva.newella.R
 import ru.plodushcheva.newella.common.novel.domain.entity.Novel
 import kotlin.coroutines.cancellation.CancellationException
 
 class NovelViewModel(
 	private val novelId: Int,
-	//private val getNovelUseCase: GetNovelUseCase,
 	private val router: NovelRouter,
 ) : ViewModel() {
 
@@ -22,23 +22,15 @@ class NovelViewModel(
 			return
 		}
 
-		val novel = Novel(novelId, "Cool Novel", "Actually, not cool")
+		val novel = Novel(
+			id = novelId,
+			name = "Cool Novel",
+			description = "Hmmmmmmm...",
+			imageResId = R.drawable.sample_image_novel
+		)
+
 		_state.value = NovelState.Content(novel)
 
-		/*viewModelScope.launch {
-			_state.value = NovelState.Loading
-
-			try {
-				val novel = getNovelUseCase(novelId)
-				_state.value = NovelState.Content(novel)
-			} catch (ce: CancellationException) {
-				throw ce
-			} catch (ex: Exception) {
-				_state.value = NovelState.Failure(ex.message)
-			}
-		}
-
-		 */
 	}
 
 	fun goBack() {
